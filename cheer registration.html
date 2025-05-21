@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eastern Shore Flag Cheer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #cc0066;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px #ccc;
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #cc0066;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .liability {
+      font-size: 0.9em;
+      margin-top: 30px;
+      color: #333;
+    }
+    .success {
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Eastern Shore Flag Cheer</h1>
+
+  <form action="https://formspree.io/f/xnndynbx" method="POST">
+    <label for="parentName">Parent/Guardian Name</label>
+    <input type="text" id="parentName" name="Parent Name" required>
+
+    <label for="email">Parent/Guardian Email</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="childName">Participant's Full Name</label>
+    <input type="text" id="childName" name="Child Name" required>
+
+    <label for="age">Age (6–14 only)</label>
+    <input type="number" id="age" name="Age" min="6" max="14" required>
+
+    <label for="shirtSize">Shirt Size</label>
+    <select id="shirtSize" name="Shirt Size" required>
+      <option value="">-- Select Shirt Size --</option>
+      <option value="Youth Small">Youth Small</option>
+      <option value="Youth Medium">Youth Medium</option>
+      <option value="Youth Large">Youth Large</option>
+      <option value="Youth XL">Youth XL</option>
+      <option value="Adult Small">Adult Small</option>
+      <option value="Adult Medium">Adult Medium</option>
+    </select>
+
+    <label for="notes">Additional Notes (optional)</label>
+    <textarea id="notes" name="Additional Notes" rows="4"></textarea>
+
+    <p class="liability">
+      <strong>Liability Clause:</strong> By submitting this form, I, the parent or legal guardian of the registered child, acknowledge and agree that Eastern Shore Flag Cheer and its organizers are not liable for any injuries, accidents, or unforeseen incidents that may occur during cheerleading activities. I assume full responsibility for any risk associated with participation.
+    </p>
+
+    <p>
+      Once submitted, you will receive a confirmation email with a Venmo link for payment and final registration.
+    </p>
+
+    <button type="submit">Register</button>
+
+    <p class="success" id="confirmation" style="display:none;">
+      Form submitted! A notification will be sent to <strong>esflagcheer@gmail.com</strong> and a Venmo link will be emailed.
+    </p>
+  </form>
+
+  <script>
+    // Show a confirmation message when form is submitted
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      form.submit(); // Let Formspree handle it
+      document.getElementById("confirmation").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
